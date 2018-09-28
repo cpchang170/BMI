@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         help.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new AlertDialog.Builder(MainActivity.this).setTitle("HELP").setMessage("The body mass index (BMI) or Quetelet index is a value derived from the mass (weight) and height of an individual").setPositiveButton("OK", null).show();
+                new AlertDialog.Builder(MainActivity.this).setTitle(R.string.help).setMessage(R.string.bmi_info).setPositiveButton(R.string.ok, null).show();
             }
         });
     }
@@ -48,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
         float h = Float.parseFloat(s_edh);
         float bmi = w / (h * h);
         Log.d("MainActivity", "BMI" + bmi);
-        Toast.makeText(this,"your BMI is " + bmi,Toast.LENGTH_LONG).show();
-        result.setText("you BMI is " + bmi);
-        new AlertDialog.Builder(this).setTitle("BMI").setMessage("your BMI is"+bmi).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        Toast.makeText(this,getString(R.string.your_BMI_is) + bmi,Toast.LENGTH_LONG).show();
+        result.setText(getString(R.string.your_BMI_is) + bmi);
+        new AlertDialog.Builder(this).setTitle(R.string.bmi).setMessage(getString(R.string.your_BMI_is)+bmi).setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 edw.setText("");
